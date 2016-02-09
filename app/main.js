@@ -27,14 +27,14 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   
   // Create the browser window.
-  mainWindow = new BrowserWindow({});
+  mainWindow = new BrowserWindow({kiosk: true, resizable: false, movable: false, closable: false, alwaysOnTop: true, frame: false});
   mainWindow.maximize();
   
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/app.html');
   
     var template = [
-        {
+        /*{
             label: 'File',
             submenu: [
                 {
@@ -44,7 +44,7 @@ app.on('ready', function() {
                     click: showOpen
                 }
             ]
-        },
+        },*/
         {
             label: 'Edit',
             submenu: [
