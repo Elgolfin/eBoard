@@ -9,11 +9,28 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "electron-prebuilt": "^0.36.6",
+    "grunt": "^0.4.5",
     "mocha": "^2.4.5",
-    "sinon": "^1.17.3",
-    "electron-prebuilt": "^0.36.6"
+    "sinon": "^1.17.3"
   },
   "scripts": {
-      "start": "electron app"
-  }
+    "start": "electron ."
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://Elgolfin@github.com/Elgolfin/eBoard.git"
+  },
+  "author": "Elgo",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Elgolfin/eBoard/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/Elgolfin/eBoard/issues"
+  },
+  "homepage": "https://github.com/Elgolfin/eBoard#readme"
 }

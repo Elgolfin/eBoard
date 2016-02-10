@@ -4,7 +4,11 @@ var Vue = require('vue');
 
 exports.comp2 = Vue.extend({
     data: function () {
-        return { title: "comp2 title", comp2: "comp2" }
+        return { 
+            title: "comp1 title",
+            height: window.innerHeight,
+            width: window.innerWidth 
+        }
     },
     template: jetpack.read('./components/test/comp2.vue.html')
 });

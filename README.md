@@ -7,4 +7,8 @@
 - npm install
 - npm start
 
+## Developement environment setup
+
+- electron-packager . eBoard --platform=win32 --arch=x64 --version=0.36.6
+
 ## Links
