@@ -1,4 +1,4 @@
-/* global process */
+/* global process, __dirname, global */
 const electron = require('electron');
 const app = electron.app;  // Module to control application life.
 const BrowserWindow = electron.BrowserWindow;  // Module to create native browser window.
@@ -27,7 +27,8 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   
   // Create the browser window.
-  mainWindow = new BrowserWindow({kiosk: true, resizable: false, movable: false, closable: false, alwaysOnTop: true, frame: false});
+  //mainWindow = new BrowserWindow({kiosk: true, resizable: false, movable: false, closable: false, alwaysOnTop: true, frame: false});
+  mainWindow = new BrowserWindow();
   mainWindow.maximize();
   
   // and load the index.html of the app.
@@ -126,7 +127,7 @@ app.on('ready', function() {
 });
 
 const jetpack = require('fs-jetpack').cwd(app.getAppPath())
-global.filepath = 'default.4yb';
+global.me = {prop: null};
 var showOpen = function() {
 	dialog.showOpenDialog({ properties: [ 'openFile'], filters: [{ name: 'json', extensions: ['json'] }]}, function(filenames){
         if (filenames === undefined) return;

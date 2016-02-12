@@ -2,8 +2,7 @@ const app = require('remote').require('app');
 const jetpack = require('fs-jetpack').cwd(app.getAppPath());
 var Vue = require('vue');
 var mixin = require('../../mixins/mixins.js').mixin;
-
-//var Datastore = require('nedb'), db = new Datastore({ filename: 'test.json', autoload: true });
+const timekeeper = require('../../js/timekeeper.js').timekeeper;
 
 exports.sidebar = Vue.extend({
     data: function () {
@@ -18,11 +17,17 @@ exports.sidebar = Vue.extend({
         }
     },
     template: jetpack.read('./components/shell/sidebar.vue.html'),
-    methods: {
-        /*changeView: function (view) {
-            console.log("Change view from " + this.$root.currentView + " to " + view);
-            this.$root.currentView = view;
-        }*/
-    },
-    mixins: [mixin]
+    mixins: [mixin],
+    ready: function() {
+        var vm = this.$root;
+        var i = 0;
+        var pages = ['comp1', 'comp2', 'comp3', 'comp4ybGraphMain'];
+        timekeeper.activate(function(){
+            vm.currentView = pages[i];
+            i++;
+            if (i >= pages.length) {
+                i = 0;
+            }
+        });
+    }
 });
