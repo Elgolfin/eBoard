@@ -1,7 +1,7 @@
 exports.timekeeper = { 
     active: true,
-    timeLimit: 1000 * 20,   // 20 seconds
-    inactiveTimeLimit: 1000 * 60 * 15, // 15 minutes
+    timeLimit: 1000 * 12,   // 12 seconds
+    inactiveTimeLimit: 1000 * 60 * 12, // 12 minutes
     activate: function (func) {
         if (exports.timekeeper.active) {
             func();

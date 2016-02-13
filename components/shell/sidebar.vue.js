@@ -19,7 +19,8 @@ exports.sidebar = Vue.extend({
     template: jetpack.read('./components/shell/sidebar.vue.html'),
     mixins: [mixin],
     ready: function() {
-        var vm = this.$root;
+        exports.manager(this.$root);
+        /*var vm = this.$root;
         var i = 0;
         var pages = ['comp1', 'comp2', 'comp3', 'comp4ybGraphMain'];
         timekeeper.activate(function(){
@@ -29,5 +30,20 @@ exports.sidebar = Vue.extend({
                 i = 0;
             }
         });
+        */
     }
 });
+
+// TODO use the links JSON object to manage the different things to be displayed
+exports.manager = function myFunc(viewModel) {
+    var i = 0;
+    var pages = ['comp1', 'comp2', 'comp3', 'comp4ybGraphMain'];
+    timekeeper.active = true;
+    timekeeper.activate(function(){
+        viewModel.currentView = pages[i];
+        i++;
+        if (i >= pages.length) {
+            i = 0;
+        }
+    });
+}

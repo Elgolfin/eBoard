@@ -27,8 +27,8 @@ app.on('window-all-closed', function() {
 app.on('ready', function() {
   
   // Create the browser window.
-  //mainWindow = new BrowserWindow({kiosk: true, resizable: false, movable: false, closable: false, alwaysOnTop: true, frame: false});
-  mainWindow = new BrowserWindow();
+  mainWindow = new BrowserWindow({kiosk: true, resizable: false, movable: false, closable: false, alwaysOnTop: true, frame: false});
+  //mainWindow = new BrowserWindow();
   mainWindow.maximize();
   
   // and load the index.html of the app.
