@@ -5,8 +5,6 @@ var Vue = require('vue');
 var mixin = require('../../mixins/mixins.js').mixin;
 const timekeeper = require('../../js/timekeeper.js').timekeeper;
 
-//var Datastore = require('nedb'), db = new Datastore({ filename: 'test.json', autoload: true });
-
 console.log("Timer is " + timekeeper.active);
 console.log("Timer delay " + timekeeper.timeLimit);
 

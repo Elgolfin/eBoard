@@ -2,7 +2,8 @@ const app = require('remote').require('app');
 const jetpack = require('fs-jetpack').cwd(app.getAppPath());
 var Vue = require('vue');
 var mixin = require('../../mixins/mixins.js').mixin;
-const timekeeper = require('../../js/timekeeper.js').timekeeper;
+//const timekeeper = require('../../js/timekeeper.js').timekeeper;
+const panelsManager = require('../../js/panelsManager.js').panelsManager; 
 
 exports.sidebar = Vue.extend({
     data: function () {
@@ -19,31 +20,24 @@ exports.sidebar = Vue.extend({
     template: jetpack.read('./components/shell/sidebar.vue.html'),
     mixins: [mixin],
     ready: function() {
-        exports.manager(this.$root);
-        /*var vm = this.$root;
-        var i = 0;
-        var pages = ['comp1', 'comp2', 'comp3', 'comp4ybGraphMain'];
-        timekeeper.activate(function(){
-            vm.currentView = pages[i];
-            i++;
-            if (i >= pages.length) {
-                i = 0;
-            }
-        });
-        */
+        panelsManager.changeView(this.$root);
     }
 });
 
-// TODO use the links JSON object to manage the different things to be displayed
-exports.manager = function myFunc(viewModel) {
-    var i = 0;
-    var pages = ['comp1', 'comp2', 'comp3', 'comp4ybGraphMain'];
-    timekeeper.active = true;
-    timekeeper.activate(function(){
-        viewModel.currentView = pages[i];
-        i++;
-        if (i >= pages.length) {
-            i = 0;
-        }
-    });
-}
+/*
+exports.manager = {
+    changeView: function myFunc(viewModel) {
+        var i = 0;
+        var panels = jetpack.read('./components/shell/sidebar.vue.json','json');
+        timekeeper.active = true;
+        timekeeper.activate(function(){
+            viewModel.currentView = panels[i].view;
+            viewModel.viewData = panels[i].data;
+            i++;
+            if (i >= panels.length) {
+                i = 0;
+            }
+        });
+    }
+};
+*/

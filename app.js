@@ -17,23 +17,3 @@ const jetpack = require('fs-jetpack').cwd(app.getAppPath());
 // here files like it is node.js! Welcome to Electron world :)
 //console.log(jetpack.read('package.json', 'json'))
 var vm = require('./js/mainVM.js').mainVM;
-
-/*
-var timer = true;
-var timerDelay = 30000;
-var i = 0;
-var pages = ['comp1', 'comp2', 'comp3', 'comp4ybGraphMain'];
-displayPage();
-
-function displayPage() {
-    if (timer) {
-        console.log(pages[i]);
-        mainVM.currentView = pages[i];
-        i++;
-        if (i >= pages.length) {
-            i = 0;
-        }
-        setTimeout(displayPage, timerDelay);
-    }
-}
-*/

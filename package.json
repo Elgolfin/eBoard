@@ -10,6 +10,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "electron-prebuilt": "^0.36.6",
+    "eslint": "^2.2.0",
     "grunt": "^0.4.5",
     "mocha": "^2.4.5",
     "sinon": "^1.17.3"
