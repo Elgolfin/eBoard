@@ -1,0 +1,117 @@
+body {
+    background-color: #F6F6F6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    color: #555;
+}
+
+.charts-wrapper {
+    margin: 25px auto;
+    position: relative;
+    width: 900px;
+}
+
+.charts-wrapper h2 {
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+}
+
+.charts-wrapper .percentage {
+    position: relative;
+    top: -75px;
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    height: 100%;
+}
+
+.charts-wrapper .target {
+    position: relative;
+    top: -25px;
+}
+
+.charts-summary {
+    display: inline-block;
+    width: 240px;
+    height: 50px;
+    padding: 50px 0;
+}
+
+.charts-doughnut {
+    display: inline-block;
+    width: 240px;
+    height: 150px;
+}
+
+.charts-columns {
+    display: inline-block;
+    position: relative;
+    height: 100px;
+    width: 400px;
+}
+
+.column {
+    position: relative;
+    display: inline-block; 
+    height: 100%;
+    width: 5%;
+    margin-right: 1%;
+    background: #e8e8e8;
+    border: 1px solid #ccc;
+}
+
+.graph .column:nth-last-child(1) {
+    padding-right: 0%;
+}
+
+.column > div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, coral , orange);
+}
+
+.column > div > span {
+    position: absolute;
+    bottom: -25px;
+    font-weight: bold;
+    color: #888;
+}
+
+
+/*
+
+var data2 = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "rgba(220,220,220,1)",
+                        pointColor: "rgba(220,220,220,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "My Second dataset",
+                        fillColor: "rgba(151,187,205,0.2)",
+                        strokeColor: "rgba(151,187,205,1)",
+                        pointColor: "rgba(151,187,205,1)",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    }
+                ]
+            };
+
+            
+            var ctx2 = document.getElementById("columns").getContext("2d");
+            console.log(ctx2);
+            //var myBarChart1 = new Chart(ctx).Bar(data);
+            var myLineChart = new Chart(ctx2).Line(data2, {});
+            
+            
+            */

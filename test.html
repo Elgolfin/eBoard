@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>KPI Sample</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/charts.css" rel="stylesheet">
+</head>
+<body>
+    
+    
+    <div class="charts-wrapper">
+        
+        <h2 class="charts-title">Product Quality</h2>
+        
+        <div class="charts-summary">
+            <div class="percentage">89.4%</div>
+            <br />
+            <span class="target">(Target: 90%)</span>
+            <!--br />
+            <span class="byline">(Six months trend)</span>
+            <br />
+            <span class="trend">UP</span-->
+        </div>
+        
+        <div class="charts-doughnut">
+            <canvas id="doughnut" width="125" height="125"></canvas>
+        </div>
+        
+        <div class="charts-columns">
+            
+            <canvas id="columns" width="400" height="125"></canvas>
+            
+            <!--iv class="column"><div style="height: 75%"><span>01</span></div></div>
+            <div class="column"><div style="height: 78%"><span>02</span></div></div>
+            <div class="column"><div style="height: 76%"><span>03</span></div></div>
+            <div class="column"><div style="height: 85%"><span>04</span></div></div>
+            <div class="column"><div style="height: 84%"><span>05</span></div></div>
+            <div class="column"><div style="height: 80%"><span>06</span></div></div>
+            
+            <div class="column"><div style="height: 79%"><span>07</span></div></div>
+            <div class="column"><div style="height: 81%"><span>08</span></div></div>
+            <div class="column"><div style="height: 82%"><span>09</span></div></div>
+            <div class="column"><div style="height: 85%"><span>10</span></div></div>
+            <div class="column"><div style="height: 87%"><span>11</span></div></div>
+            <div class="column"><div style="height: 90%"><span>12</span></div></div*-->
+            
+        </div>
+    
+    </div>
+    
+    <div class="charts-wrapper">
+        
+        <h2 class="charts-title">Team Mood</h2>
+        
+        <div class="charts-summary">
+            <div class="percentage">76.2%</div>
+            <br />
+            <span class="target">(Target: 86%)</span>
+            <!--br />
+            <span class="byline">(Six months trend)</span>
+            <br />
+            <span class="trend">UP</span-->
+        </div>
+        
+        <div class="charts-doughnut">
+            <canvas id="doughnut2" width="125" height="125"></canvas>
+        </div>
+        
+        <div class="charts-columns">
+            
+            <canvas id="columns2" width="400" height="125"></canvas>
+            
+        </div>
+    
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script type="text/javascript">
+    
+        (function test () {
+            var data1 = [
+                {
+                    value: 10,
+                    color:"green",
+                    highlight: "green",
+                    label: ""
+                },
+                {
+                    value: 0.6,
+                    color: "grey",
+                    highlight: "grey",
+                    label: ""
+                },
+                {
+                    value: 89.4,
+                    color: "orange",
+                    highlight: "orange",
+                    label: ""
+                }
+            ];
+            
+            var ctx1 = document.getElementById("doughnut").getContext("2d");
+            var myDoughnutChart = new Chart(ctx1).Doughnut(data1, {});
+            
+            var data3 = [
+                {
+                    value: 10,
+                    color:"green",
+                    highlight: "green",
+                    label: ""
+                },
+                {
+                    value: 10,
+                    color:"orange",
+                    highlight: "orange",
+                    label: ""
+                },
+                {
+                    value: 3.8,
+                    color: "grey",
+                    highlight: "grey",
+                    label: ""
+                },
+                {
+                    value: 76.2,
+                    color: "darkred",
+                    highlight: "darkred",
+                    label: ""
+                }
+            ];
+            
+            var ctx3 = document.getElementById("doughnut2").getContext("2d");
+            var myDoughnutChart2 = new Chart(ctx3).Doughnut(data3, {});
+            
+            var data2 = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "Baseline",
+                        fillColor: "rgba(220,220,220,0.1)",
+                        strokeColor: "grey",
+                        pointColor: "grey",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [0, 0, 0, 0, 0, 0, 0]
+                    },
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.1)",
+                        strokeColor: "green",
+                        pointColor: "green",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [90, 90, 90, 90, 90, 90, 90]
+                    },
+                    {
+                        label: "My First dataset",
+                        fillColor: "rgba(220,220,220,0.1)",
+                        strokeColor: "orange",
+                        pointColor: "orange",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(220,220,220,1)",
+                        data: [80, 80, 80, 80, 80, 80, 80]
+                    },
+                    {
+                        label: "My Second dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "coral",
+                        pointColor: "coral",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    }
+                ]
+            };
+
+            
+            var ctx2 = document.getElementById("columns").getContext("2d");
+            var myLineChart = new Chart(ctx2).Line(data2, {
+                scaleShowGridLines : false,
+                scaleShowHorizontalLines: false,
+                scaleShowVerticalLines: false}
+            );
+            
+            var data4 = {
+                labels: ["FY15 Q4", "FY16 Q1", "FY16 Q2"],
+                datasets: [
+                    {
+                        label: "Green",
+                        fillColor: "rgba(220,220,220,0)",
+                        strokeColor: "green",
+                        pointColor: "green",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [86, 86, 86]
+                    },
+                    {
+                        label: "Yellow",
+                        fillColor: "rgba(220,220,220,0)",
+                        strokeColor: "orange",
+                        pointColor: "orange",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [71, 71, 71]
+                    },
+                    {
+                        label: "Baseline",
+                        fillColor: "rgba(220,220,220,0)",
+                        strokeColor: "grey",
+                        pointColor: "grey",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [0, 0, 0]
+                    },
+                    {
+                        label: "My Second dataset",
+                        fillColor: "rgba(220,220,220,0.2)",
+                        strokeColor: "coral",
+                        pointColor: "coral",
+                        pointStrokeColor: "#fff",
+                        pointHighlightFill: "#fff",
+                        pointHighlightStroke: "rgba(151,187,205,1)",
+                        data: [74, 78, 81]
+                    }
+                ]
+            };
+            
+            var ctx4 = document.getElementById("columns2").getContext("2d");
+            var myLineChart2 = new Chart(ctx4).Line(data4, {
+                    scaleShowGridLines : false,
+                    scaleShowHorizontalLines: false,
+                    scaleShowVerticalLines: false//,
+                    //legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+                }
+            );
+        })();
+        
+    </script>
+    
+</body>
+</html>
