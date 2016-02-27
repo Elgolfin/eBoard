@@ -1,0 +1,27 @@
+<p><input type="text" @keyup.enter="submit" v-model="actual" /></p>
+
+<div class="charts-wrapper">
+    
+    <h2 class="charts-title">{{title}}</h2>
+    
+    <div class="charts-summary">
+        <div class="percentage">{{actual}}%</div>
+        <br />
+        <span class="target">(Target: {{greenTarget}}%)</span>
+        <!--br />
+        <span class="byline">(Six months trend)</span>
+        <br />
+        <span class="trend">UP</span-->
+    </div>
+    
+    <div class="charts-doughnut">
+        <canvas id="doughnut-{{id}}" width="125" height="125"></canvas>
+    </div>
+    
+    <div class="charts-columns">
+        
+        <canvas id="line-{{id}}" width="400" height="125"></canvas>
+        
+    </div>
+    
+</div>

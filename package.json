@@ -16,7 +16,8 @@
     "sinon": "^1.17.3"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "mocha -R list"
   },
   "main": "main.js",
   "repository": {

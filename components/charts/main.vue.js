@@ -38,3 +38,4 @@ exports.main = Vue.extend({
         var myBarChart2 = new Chart(ctx2).Line(this.data);
     }
 });
+
