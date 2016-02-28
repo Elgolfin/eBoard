@@ -7,12 +7,35 @@ var kpi = require('../../js/kpi.js').kpi;
 exports.kpi = Vue.extend({
     data: function () {
         return { 
-            id: "doughnut2",
-            title: "Team Mood",
-            greenTarget: 90,
-            yellowTarget: 80,
-            actual: 76.2,
-            lineData: {
+            
+        }
+    },
+    computed: {
+        doughnutData: function () {
+            return kpi.getDoughnutData(this.actual, this.greenTarget, this.yellowTarget);
+        },
+        greenTarget: function () {
+            return this.data.greenTarget;
+        },
+        yellowTarget: function () {
+            return this.data.yellowTarget;
+        },
+        actual: {
+            get: function() {
+                return this.data.actual;
+            },
+            set: function (newValue) {
+                this.data.actual = newValue;
+            }
+        },
+        title: function () {
+            return this.data.title;
+        },
+        id: function () {
+            return this.data.id;
+        },
+        lineData: function () {
+            return {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
                 datasets: [
                     {
@@ -59,11 +82,21 @@ exports.kpi = Vue.extend({
             }
         }
     },
-    computed: {
-        doughnutData: function () {
-            return kpi.getDoughnutData(this.actual, this.greenTarget, this.yellowTarget);
+    props: {
+        data: {
+            type: Object,
+            //required: true,
+            default: function () {
+                return { 
+                    greenTarget: 90,
+                    yellowTarget: 80,
+                    actual: 75,
+                    title: "My KPI",
+                    id: "my-kpi",
+                    lineData: null 
+                }
+            }
         }
-        
     },
     template: jetpack.read('./components/charts/kpi.vue.html'),
     methods: {

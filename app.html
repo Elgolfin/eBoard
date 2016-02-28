@@ -19,6 +19,7 @@
         <comp-4yb-sidebar></comp-4yb-sidebar>
         <!-- Page Content -->
         <div id="page-content-wrapper">
+            <kpi :data="{greenTarget: 80, yellowTarget:60, actual: 75, title: 'My KPI Title'}"></kpi>
             <component :is="currentView" :view-data="viewData"></component> 
         </div>
         <!-- /#page-content-wrapper -->
