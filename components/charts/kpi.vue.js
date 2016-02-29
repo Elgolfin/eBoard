@@ -6,34 +6,35 @@ var kpi = require('../../js/kpi.js').kpi;
 
 exports.kpi = Vue.extend({
     data: function () {
-        return { 
-            
-        }
+        return {
+             
+        }  
     },
     computed: {
         doughnutData: function () {
-            return kpi.getDoughnutData(this.actual, this.greenTarget, this.yellowTarget);
+            return kpi.getDoughnutData(this.kpidata.actual, this.kpidata.greenTarget, this.kpidata.yellowTarget);
         },
         greenTarget: function () {
-            return this.data.greenTarget;
+            return this.kpidata.greenTarget;
         },
         yellowTarget: function () {
-            return this.data.yellowTarget;
+            return this.kpidata.yellowTarget;
         },
         actual: {
             get: function() {
-                return this.data.actual;
+                return this.kpidata.actual;
             },
             set: function (newValue) {
-                this.data.actual = newValue;
+                this.kpidata.actual = newValue;
             }
         },
         title: function () {
-            return this.data.title;
+            return this.kpidata.title;
         },
         id: function () {
-            return this.data.id;
+            return this.kpidata.id;
         },
+        
         lineData: function () {
             return {
                 labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -81,11 +82,14 @@ exports.kpi = Vue.extend({
                 ]
             }
         }
+        // */
     },
     props: {
-        data: {
+        kpidata: {
             type: Object,
-            //required: true,
+            required: true
+        }
+            /*
             default: function () {
                 return { 
                     greenTarget: 90,
@@ -96,9 +100,10 @@ exports.kpi = Vue.extend({
                     lineData: null 
                 }
             }
-        }
-    },
-    template: jetpack.read('./components/charts/kpi.vue.html'),
+            // */
+       // } 
+    }
+    ,template: jetpack.read('./components/charts/kpi.vue.html'),
     methods: {
         submit: function () {
             this.renderDoughnutChart();
@@ -117,10 +122,8 @@ exports.kpi = Vue.extend({
         }
     },
     ready: function(){
-        
         this.renderDoughnutChart();
         this.renderLineChart();
-        
     }
 });
 

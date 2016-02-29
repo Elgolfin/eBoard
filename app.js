@@ -16,4 +16,9 @@ const jetpack = require('fs-jetpack').cwd(app.getAppPath());
 // Holy crap! This is browser window with HTML and stuff, but I can read
 // here files like it is node.js! Welcome to Electron world :)
 //console.log(jetpack.read('package.json', 'json'))
+
+const Vue = require('vue');
+const kpi = require('./components/charts/kpi.vue.js').kpi;
+Vue.component('kpi', kpi);
+
 var vm = require('./js/mainVM.js').mainVM;

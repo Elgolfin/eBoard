@@ -7,6 +7,7 @@ const mainGraph = require('../components/charts/main.vue.js').main;
 const webview = require('../components/panels/webview.vue.js').webview;
 const image = require('../components/panels/image.vue.js').image;
 const kpi = require('../components/charts/kpi.vue.js').kpi;
+const kpis = require('../components/charts/kpis.vue.js').kpis;
 
 // Mixins
 const mixin = require('../mixins/mixins.js').mixin;
@@ -23,7 +24,7 @@ exports.mainVM = new Vue({
         comp4ybStatusbar: statusbar,
         webview: webview,
         image: image,
-        kpi: kpi
+        kpis: kpis
     },
     methods: {
         
