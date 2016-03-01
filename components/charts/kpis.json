@@ -1,0 +1,26 @@
+[
+    {
+        "greenTarget": 80,
+        "yellowTarget": 60,
+        "actual": 75,
+        "title": "My KPI 1",
+        "id": "my-kpi1",
+        "lineData": null
+    },
+    {
+        "greenTarget": 90,
+        "yellowTarget": 80,
+        "actual": 79,
+        "title": "My KPI 2",
+        "id": "my-kpi2",
+        "lineData": null
+    },
+    {
+        "greenTarget": 95,
+        "yellowTarget": 90,
+        "actual": 33,
+        "title": "My KPI 3",
+        "id": "my-kpi3",
+        "lineData": null
+    }
+]

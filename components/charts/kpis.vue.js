@@ -7,7 +7,8 @@ exports.kpis = Vue.extend({
     data: function () {
         return {
             // TODO: dynamically load the kpis from a json file
-            kpis: [
+            kpis: jetpack.read('./components/charts/kpis.json','json')
+            /*kpis: [
                 {
                     greenTarget: 80,
                     yellowTarget: 60,
@@ -33,6 +34,7 @@ exports.kpis = Vue.extend({
                     lineData: null
                 }
             ]    
+            //*/
         }  
     },
     template: jetpack.read('./components/charts/kpis.vue.html'),
