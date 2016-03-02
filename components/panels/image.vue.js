@@ -12,12 +12,17 @@ exports.image = Vue.extend({
     },
     computed: {
         url: function() {
-            return this.data.src;   
+            return this.data.data.src;   
         }        
     },
     template: jetpack.read('./components/panels/image.vue.html'),
     activate: function (done) {
         this.data = this.$root.viewData;
         done();
+    },
+    events: {
+        changeView: function(data) {
+            this.data = data;
+        }
     }
 });

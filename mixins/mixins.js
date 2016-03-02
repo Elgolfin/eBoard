@@ -11,6 +11,7 @@ exports.mixin = {
             //console.log("Stop timer for: " + timekeeper.active + " (" + timekeeper.timeLimit + "ms)");
             timekeeper.active = false;
             var vm = this.$root;
+            vm.$broadcast("changeView", viewData);
             setTimeout(function() {
                 manager.changeView(vm);
             }, timekeeper.inactiveTimeLimit);

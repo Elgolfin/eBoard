@@ -1,18 +1,27 @@
 [
     {
-        "name": "Image",
+        "name": "Image 1",
         "view": "image",
         "icon": "dashboard",
-        "family": "Link",
+        "family": "Link 1",
         "data" : {
             "src": "http://orig12.deviantart.net/c10e/f/2007/035/8/a/little_girl_big_robot_by_jashawk.jpg"
+        }
+    },
+     {
+        "name": "Image 2",
+        "view": "image",
+        "icon": "dashboard2",
+        "family": "Link 2",
+        "data" : {
+            "src": "http://www.robots.nu/assets/Uploads/_resampled/croppedimage655487-Robot-als-project.jpg"
         }
     },
     {
         "name": "Google",
         "view": "webview",
         "icon": "bar-chart",
-        "family": "Link",
+        "family": "Link 3",
         "data" : {
             "url": "https://www.google.ca/"
         }

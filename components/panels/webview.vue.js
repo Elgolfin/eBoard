@@ -12,12 +12,17 @@ exports.webview = Vue.extend({
     },
     computed: {
         url: function() {
-            return this.data.url;   
+            return this.data.data.url;   
         }        
     },
     template: jetpack.read('./components/panels/webview.vue.html'),
     activate: function (done) {
         this.data = this.$root.viewData;
         done();
+    },
+    events: {
+        changeView: function(data) {
+            this.data = data;
+        }
     }
 });

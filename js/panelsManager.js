@@ -9,7 +9,8 @@ exports.panelsManager = {
         timekeeper.active = true;
         timekeeper.activate(function(){
             viewModel.currentView = panels[i].view;
-            viewModel.viewData = panels[i].data;
+            viewModel.viewData = panels[i];
+            viewModel.$broadcast("changeView", panels[i]);
             i++;
             if (i >= panels.length) {
                 i = 0;
