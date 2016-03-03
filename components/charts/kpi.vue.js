@@ -38,26 +38,12 @@ exports.kpi = Vue.extend({
         lineData: function () {
              return this.kpidata.lineData;
         }
-        // */
     },
     props: {
         kpidata: {
             type: Object,
             required: true
         }
-            /*
-            default: function () {
-                return { 
-                    greenTarget: 90,
-                    yellowTarget: 80,
-                    actual: 75,
-                    title: "My KPI",
-                    id: "my-kpi",
-                    lineData: null 
-                }
-            }
-            // */
-       // } 
     }
     ,template: jetpack.read('./components/charts/kpi.vue.html'),
     methods: {
