@@ -5,8 +5,8 @@ var Vue = require('vue');
 var mixin = require('../../mixins/mixins.js').mixin;
 const timekeeper = require('../../js/timekeeper.js').timekeeper;
 
-console.log("Timer is " + timekeeper.active);
-console.log("Timer delay " + timekeeper.timeLimit);
+//console.log("Timer is " + timekeeper.active);
+//console.log("Timer delay " + timekeeper.timeLimit);
 
 exports.statusbar = Vue.extend({
     data: function () {
@@ -20,5 +20,8 @@ exports.statusbar = Vue.extend({
     methods: {
 
     },
-    mixins: [mixin]
+    mixins: [mixin],
+    ready: function(){
+        
+    }
 });

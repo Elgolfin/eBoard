@@ -12,9 +12,11 @@ exports.mixin = {
             timekeeper.active = false;
             var vm = this.$root;
             vm.$broadcast("changeView", viewData);
-            setTimeout(function() {
+            clearTimeout(timekeeper.timer);
+            timekeeper.timer = setTimeout(function() {
                 manager.changeView(vm);
             }, timekeeper.inactiveTimeLimit);
+            timekeeper.createProgressBar('progressbar', (timekeeper.inactiveTimeLimit / 1000) + 's');
             //}, timekeeper.inactiveTimeLimit, vm); // pass the viewmodel as an arg
             
             this.$root.currentView = view;

@@ -2,11 +2,10 @@ const Vue = require('vue');
 
 // Load all components
 const sidebar = require('../components/shell/sidebar.vue.js').sidebar;
-const statusbar = require('../components/shell/statusbar.vue.js').statusbar;
+//const statusbar = require('../components/shell/statusbar.vue.js').statusbar;
 const mainGraph = require('../components/charts/main.vue.js').main;
 const webview = require('../components/panels/webview.vue.js').webview;
 const image = require('../components/panels/image.vue.js').image;
-const kpi = require('../components/charts/kpi.vue.js').kpi;
 const kpis = require('../components/charts/kpis.vue.js').kpis;
 
 // Mixins
@@ -21,7 +20,7 @@ exports.mainVM = new Vue({
     },
     components: {
         comp4ybSidebar: sidebar,
-        comp4ybStatusbar: statusbar,
+        //comp4ybStatusbar: statusbar,
         webview: webview,
         image: image,
         kpis: kpis

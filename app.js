@@ -19,6 +19,9 @@ const jetpack = require('fs-jetpack').cwd(app.getAppPath());
 
 const Vue = require('vue');
 const kpi = require('./components/charts/kpi.vue.js').kpi;
+const statusbar1 = require('./components/shell/statusbar.vue.js').statusbar;
+
 Vue.component('kpi', kpi);
+Vue.component('comp4ybStatusbar', statusbar1);
 
 var vm = require('./js/mainVM.js').mainVM;
