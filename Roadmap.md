@@ -1,15 +1,15 @@
 eBoard - Roadmap
 =================
 
-## 0.2.0 (Doing Now)
+## ~~0.2.0~~ 
 
-* Shell
-* Timer between vue
-* Stop the timer when a user is doing an action (restarts the timer after a time limit)
+* ~~Shell~~
+* ~~Timer between vue~~
+* ~~Stop the timer when a user is doing an action (restarts the timer after a time limit)~~
 
-## 0.4.0
+## 0.4.0 (Doing Now)
 
-* TBD
+* UX improvement for the left menu (for big touchscreen)
 
 ## 0.6.0
 
