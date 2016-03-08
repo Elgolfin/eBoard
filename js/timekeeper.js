@@ -41,6 +41,10 @@ exports.timekeeper = {
             }
 
             // Append the progressbar to the main progressbardiv
+            if (progressbar.childNodes.length) {
+                progressbar.removeChild(progressbar.childNodes[0]);
+            }
+            
             progressbar.appendChild(progressbarinner);
 
             // When everything is set up we start the animation
