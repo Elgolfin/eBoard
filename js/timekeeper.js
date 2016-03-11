@@ -1,18 +1,47 @@
 exports.timekeeper = {
     active: true,
-    timeLimit: 1000 * 12,   // 12 seconds
-    inactiveTimeLimit: 1000 * 60 * 1, // 1 minute
+    timeLimit: 1000 * 15,   // 15 seconds
+    delayTimeLimit: 1000 * 60 * 3, // 3 minutes
+    stopTimeLimit: 1000 * 60 * 15, // 15 minutes
     activate: function (func) {
         if (exports.timekeeper.active) {
             func();
             var exec = exports.timekeeper.activate;
-            var argFunc = func;
+            //var argFunc = func;
             clearTimeout(exports.timekeeper.timer);
             exports.timekeeper.timer = setTimeout(function () {
-                exec(argFunc);
+                exec(func);
             }, exports.timekeeper.timeLimit);
             exports.timekeeper.createProgressBar('progressbar', (exports.timekeeper.timeLimit / 1000) + 's');
         }
+    },
+    start: function (func, funcArgs) {
+        exports.timekeeper.active = true;
+        clearTimeout(exports.timekeeper.timer);
+        func(funcArgs);
+        exports.timekeeper.timer = setTimeout(function() {
+            func(funcArgs);
+        }, exports.timekeeper.timeLimit);
+        exports.timekeeper.createProgressBar('progressbar', (exports.timekeeper.timeLimit / 1000) + 's');
+    },
+    /*
+    Use this when a user interacts with the eBoard, it will delay the execution of the next panel
+    */
+    delay: function (func, funcArgs) {
+        exports.timekeeper.active = false;
+        clearTimeout(exports.timekeeper.timer);
+        exports.timekeeper.timer = setTimeout(function() {
+            func(funcArgs);
+        }, exports.timekeeper.delayTimeLimit);
+        exports.timekeeper.createProgressBar('progressbar', (exports.timekeeper.delayTimeLimit / 1000) + 's');
+    },
+    stop: function (func, funcArgs) {
+        exports.timekeeper.active = false;
+        clearTimeout(exports.timekeeper.timer);
+        exports.timekeeper.timer = setTimeout(function() {
+            func(funcArgs);
+        }, exports.timekeeper.stopTimeLimit);
+        exports.timekeeper.createProgressBar('progressbar', (exports.timekeeper.stopTimeLimit / 1000) + 's');
     },
     timer: null,
     /*

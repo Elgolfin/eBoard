@@ -9,6 +9,7 @@ exports.sidebar = Vue.extend({
     data: function () {
         return { 
             menuTitle: "4yb",
+            // TODO put the filepath in a config file
             links: jetpack.read('./components/shell/sidebar.vue.json','json'),
             currentView: null
         }

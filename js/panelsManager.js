@@ -5,6 +5,7 @@ const timekeeper = require('./timekeeper.js').timekeeper;
 exports.panelsManager = {
     changeView: function myFunc(viewModel) {
         var i = 0;
+        // TODO put the filepath in a config file
         var panels = jetpack.read('./components/shell/sidebar.vue.json','json');
         timekeeper.active = true;
         timekeeper.activate(function(){

@@ -17,6 +17,10 @@
                 <a @click.prevent="changeView('comp3')" href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Test Link 3</a>
             </li-->  
         </ul>
+        
+        <a href="#stop-timer" @click.prevent="stopTimer()" class="btn btn-default" id="stop-timer" style="position: absolute; bottom: 75px; left: 25px; z-index: 400000">Stop Timer</a>
+        <a href="#start-timer" @click.prevent="startTimer()" class="btn btn-default" id="start-timer" style="position: absolute; bottom: 125px; left: 25px; z-index: 400000">Start Timer</a>
+        
     </template>
     <template v-else>
         Menu is empty.
