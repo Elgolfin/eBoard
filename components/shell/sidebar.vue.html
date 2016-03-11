@@ -7,15 +7,16 @@
                 <a @click.prevent="changeView(link.view, link)"  href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-{{link.icon}} fa-stack-1x "></i></span> {{link.name}}</a>
             </li>
             </template>
-            <li>
+            <!--li>
                 <a @click.prevent="changeView('kpis')" href=""><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>KPIs</a>
             </li>
-            <!--li>
+            <li>
                 <a @click.prevent="changeView('comp2')" href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Test Link 2</a>
             </li>
             <li>
                 <a @click.prevent="changeView('comp3')" href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-wrench fa-stack-1x "></i></span>Test Link 3</a>
-            </li-->  
+            </li>  
+            <!-- -->
         </ul>
         
         <a href="#stop-timer" @click.prevent="stopTimer()" class="btn btn-default" id="stop-timer" style="position: absolute; bottom: 75px; left: 25px; z-index: 400000">Stop Timer</a>

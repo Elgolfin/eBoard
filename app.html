@@ -19,7 +19,7 @@
     
     <div id="wrapper">
         
-        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position: absolute; bottom: 25px; left: 25px; z-index: 400000">Toggle Menu</a>
+        <a href="#menu-toggle" class="btn btn-default toggled" id="menu-toggle" style="position: absolute; bottom: 25px; left: 25px; z-index: 400000">Toggle Menu</a>
         
         <comp-4yb-sidebar></comp-4yb-sidebar>
 
@@ -58,6 +58,11 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    
+     $(document).ready(function() {
+     });
+
+    
     </script>
     
 </body>
