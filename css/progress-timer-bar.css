@@ -1,7 +1,7 @@
 .progressbar {
     width: 100%;
-    position: relative;
-    top: -2px;
+    position: absolute;
+    bottom: 2px;
 }
 
 .progressbar .inner {

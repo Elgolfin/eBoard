@@ -8,23 +8,35 @@
     <meta name="author" content="">
     <title>eBoard</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/charts.css" rel="stylesheet">
     <link href="css/progress-timer-bar.css" rel="stylesheet">
 </head>
 <body>
     
-    <div id="wrapper" class="toggled-2 ">
-        <!-- Sidebar -->
+    
+    
+    <div id="wrapper">
+        
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" style="position: absolute; bottom: 25px; left: 25px; z-index: 400000">Toggle Menu</a>
+        
         <comp-4yb-sidebar></comp-4yb-sidebar>
+
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <!--kpi :kpidata="{greenTarget: 80, yellowTarget:60, id:'first', actual: 75, title: 'My KPI Title 1'}"></kpi>
-            <kpi :kpidata="{greenTarget: 90, yellowTarget:80, id:'second', actual: 50, title: 'My KPI Title 2'}"></kpi-->
-            <component :is="currentView" :view-data="viewData"></component> 
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--kpi :kpidata="{greenTarget: 80, yellowTarget:60, id:'first', actual: 75, title: 'My KPI Title 1'}"></kpi>
+                        <kpi :kpidata="{greenTarget: 90, yellowTarget:80, id:'second', actual: 50, title: 'My KPI Title 2'}"></kpi-->
+                        <component :is="currentView" :view-data="viewData"></component> 
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /#page-content-wrapper -->
+
     </div>
     <!-- /#wrapper -->
     
@@ -36,9 +48,17 @@
     window.$ = window.jQuery = require('./js/jquery-1.12.0.min.js');
     </script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/sidebar.js"></script>
     <script src="js/Chart.min.js"></script>
     
     <script src="app.js"></script>
+    
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
 </body>
 </html>
